@@ -22,19 +22,16 @@ return {
 
                 -- keybinds
                 opts.desc = "Show LSP references"
-                keymap.set("n", "gR", "<cmd>Telescope lsp_refernences<cr>", opts)
-
-                opts.desc = "Show LSP declaration"
-                keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+                keymap.set("n", "gr", "<cmd>Telescope lsp_references<cr>", opts)
 
                 opts.desc = "Show LSP definitions"
                 keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<cr>", opts)
 
                 opts.desc = "Show LSP implementations"
-                keymap.set("n", "gi", "<cmd>Telescope lsp_definitions<cr>", opts)
+                keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<cr>", opts)
 
                 opts.desc = "Show LSP type definitions"
-                keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<cr>", opts)
+                keymap.set("n", "gs", "<cmd>Telescope lsp_workspace_symbols<cr>", opts)
 
                 opts.desc = "Code actions"
                 keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
@@ -69,14 +66,14 @@ return {
         -- (not in youtube nvim video)
         local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
         for type, icon in pairs(signs) do
-          local hl = "DiagnosticSign" .. type
-          vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+            local hl = "DiagnosticSign" .. type
+            vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
         end
 
         mason_lspconfig.setup_handlers({
             function(server_name)
                 lspconfig[server_name].setup({
-                    capabilities = capabilities
+                    capabilities = capabilities,
                 })
             end,
         })
