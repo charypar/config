@@ -77,5 +77,32 @@ return {
                 })
             end,
         })
+
+        -- disable watching for rust-analyzer
+        local client_capabilities = vim.lsp.protocol.make_client_capabilities()
+        client_capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = false
+
+        lspconfig.rust_analyzer.setup({
+            capabilities = client_capabilities,
+            settings = {
+                ["rust-analyzer"] = {
+                    cargo = {
+                        allTargets = true,
+                    },
+                    check = {
+                        command = "clippy",
+                    },
+                    files = {
+                        excludeDirs = {
+                            ".git",
+                            "target",
+                        },
+                    },
+                    cachePriming = {
+                        enable = false,
+                    },
+                },
+            },
+        })
     end,
 }
