@@ -32,12 +32,12 @@
                 "cargo": {
                     "features": "all"
                 }
-            },
-            "html": {
-                "initialization_options": {
-                    "checkOnSave": {
-                        "enable": false
-                    }
+            }
+        },
+        "html": {
+            "initialization_options": {
+                "checkOnSave": {
+                    "enable": false
                 }
             }
         }

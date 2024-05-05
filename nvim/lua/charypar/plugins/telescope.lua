@@ -30,9 +30,9 @@ return {
         keymap.set("n", "<leader>ff", ":Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
         keymap.set("n", "<leader>fr", ":Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
         keymap.set("n", "<leader>fb", ":Telescope buffers<cr>", { desc = "Fuzzy find a buffer" })
-        keymap.set("n", "<leader>fs", ":Telescope live_grep<cr>", { desc = "Find text in cwd" })
+        keymap.set("n", "<leader>fg", ":Telescope live_grep<cr>", { desc = "Find text in cwd" })
         keymap.set("n", "<leader>fc", ":Telescope grep_string<cr>", { desc = "Find text under cursor in cwd" })
         keymap.set("n", "<leader>fh", ":Telescope help_tags<cr>", { desc = "Find in help" })
         keymap.set("n", "<leader>ft", ":TodoTelescope<cr>", { desc = "Find TODOs" })
-    end
+    end,
 }
