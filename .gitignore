@@ -1,1 +1,4 @@
 alacritty/themes/
+zed/.tmp*
+zed/conversations/
+zed/embeddings
