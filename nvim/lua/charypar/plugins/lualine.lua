@@ -1,7 +1,7 @@
 return {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function() 
+    config = function()
         local lualine = require("lualine")
         local lazy_status = require("lazy.status")
 
@@ -16,7 +16,7 @@ return {
                 lualine_b = {'diff', 'diagnostics'},
                 lualine_c = {'filename'},
                 lualine_x = {
-                    { 
+                    {
                         lazy_status.updates,
                         cond = lazy_status.has_updates,
                     },
