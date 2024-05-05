@@ -21,6 +21,9 @@ return {
                 local opts = { buffer = ev.buf, silent = true }
 
                 -- keybinds
+                opts.desc = "Find LSP type definitions"
+                keymap.set("n", "fs", "<cmd>Telescope lsp_workspace_symbols<cr>", opts)
+
                 opts.desc = "Show LSP references"
                 keymap.set("n", "gr", "<cmd>Telescope lsp_references<cr>", opts)
 
@@ -29,9 +32,6 @@ return {
 
                 opts.desc = "Show LSP implementations"
                 keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<cr>", opts)
-
-                opts.desc = "Show LSP type definitions"
-                keymap.set("n", "gs", "<cmd>Telescope lsp_workspace_symbols<cr>", opts)
 
                 opts.desc = "Code actions"
                 keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
