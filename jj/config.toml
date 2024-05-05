@@ -1,0 +1,23 @@
+[user]
+name = "Viktor Charypar"
+email = "charypar@gmail.com"
+
+[git]
+push-branch-prefix = "viktor/push-"
+
+[ui]
+default-command = "l"
+
+[aliases]
+l = ['log', '--no-pager', '--reversed']
+s = ['status']
+
+[revsets]
+# Show
+# * history of working copy that isn't in trunk
+# * all commits ahead of trunk or branches and their recent history
+# * but with remote-only branch history removed
+log = "trunk()..@ | ancestors((trunk() | trunk()..branches())::, 4) ~ (trunk()..(remote_branches() ~ branches()))"
+
+[snapshot]
+max-new-file-size = "2M"
