@@ -23,12 +23,12 @@ return {
 
         cmp.setup({
             completion = {
-                completeopt = "menu,menuone,preview,noselect"
+                completeopt = "menu,menuone,preview,noselect",
             },
             snippet = {
                 expand = function(args)
                     luasnip.lsp_expand(args.body)
-                end
+                end,
             },
             mapping = cmp.mapping.preset.insert({
                 ["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
@@ -41,7 +41,7 @@ return {
             }),
             -- sources for autocompletion
             sources = cmp.config.sources({
-                { name = "nvim_lsp"},
+                { name = "nvim_lsp" },
                 { name = "luasnip" }, -- snippets
                 { name = "buffer" }, -- text within current buffer
                 { name = "path" }, -- file system paths
@@ -50,9 +50,13 @@ return {
             ---@diagnostic disable-next-line: missing-fields
             formatting = {
                 format = lspkind.cmp_format({
-                  maxwidth = 50,
-                  ellipsis_char = "...",
+                    maxwidth = 50,
+                    ellipsis_char = "...",
                 }),
+            },
+            window = {
+                completion = cmp.config.window.bordered(),
+                documentation = cmp.config.window.bordered(),
             },
         })
     end,
