@@ -11,7 +11,10 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("charypar.plugins", {
+require("lazy").setup({
+    { import = "charypar.plugins" },
+    { import = "charypar.plugins.lsp" }
+}, {
     checker = {
         enabled = true,
         notify = false,

@@ -1,4 +1,4 @@
-return { 
+return {
     "tinted-theming/base16-vim",
     priority = 1000, -- load first
     config = function()
