@@ -16,26 +16,26 @@ return {
                     package_pending = "",
                     package_uninstalled = "",
                 },
-                border = "rounded"
-            }
+                border = "rounded",
+            },
         })
 
         mason_lspconfig.setup({
-          ensure_installed = {
-            "tsserver",
-            "html",
-            "cssls",
-            "tailwindcss",
-            "lua_ls",
-            "graphql",
-          },
+            ensure_installed = {
+                "tsserver",
+                "html",
+                "cssls",
+                "tailwindcss",
+                "lua_ls",
+                "graphql",
+            },
         })
 
         mason_tool_installer.setup({
-          ensure_installed = {
-            "prettier", -- prettier formatter
-            "stylua", -- lua formatter
-          },
+            ensure_installed = {
+                "prettier", -- prettier formatter
+                "stylua", -- lua formatter
+            },
         })
     end,
 }
