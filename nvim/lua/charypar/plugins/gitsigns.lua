@@ -4,6 +4,12 @@ return {
     config = function()
         local gitsigns = require("gitsigns")
 
-        gitsigns.setup()
+        gitsigns.setup({
+            current_line_blame = true,
+            current_line_blame_opts = {
+                virt_text_pos = 'right_align',
+                delay = 200,
+            },
+        })
     end,
 }
