@@ -59,8 +59,10 @@ return {
             end,
         })
 
-        -- used to enable autocompletion (assign to every lsp server config)
         local capabilities = cmp_nvim_lsp.default_capabilities()
+        -- Enable dynamicRegistration to avoid LSP servers setting up watches in large repos
+        -- This looks like it will be a default in NeoVim 0.10
+        capabilities.workspace = { didChangeWatchedFiles = { dynamicRegistration = true } }
 
         -- Change the Diagnostic symbols in the sign column (gutter)
         -- (not in youtube nvim video)
@@ -78,12 +80,8 @@ return {
             end,
         })
 
-        -- disable watching for rust-analyzer
-        local client_capabilities = vim.lsp.protocol.make_client_capabilities()
-        client_capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = false
-
         lspconfig.rust_analyzer.setup({
-            capabilities = client_capabilities,
+            capabilities = capabilities,
             settings = {
                 ["rust-analyzer"] = {
                     cargo = {
