@@ -22,6 +22,9 @@ return {
                 "bash",
                 "css",
                 "dockerfile",
+                "elixir",
+                "eex",
+                "heex",
                 "fish",
                 "gitignore",
                 "javascript",
@@ -44,8 +47,8 @@ return {
                     node_incremental = "s",
                     scope_incremental = false,
                     node_decremental = "<bs>",
-                }
-            }
+                },
+            },
         })
     end,
 }
