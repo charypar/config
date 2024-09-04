@@ -6,6 +6,10 @@ if status is-interactive
     starship init fish | source
     jj util completion fish | source
 
+    # nvm
+    if test -x /opt/homebrew/opt/nvm/nvm.sh
+        bass source /opt/homebrew/opt/nvm/nvm.sh
+    end
 
     # Abbreviations
     abbr --add dotdot --regex '^\.\.+$' --function multicd
