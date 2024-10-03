@@ -17,7 +17,7 @@ s = ['status']
 # * history of working copy that isn't in trunk
 # * all commits ahead of trunk or branches and their recent history
 # * but with remote-only branch history removed
-log = "trunk()..@ | ancestors((trunk() | trunk()..branches())::, 4) ~ (trunk()..(remote_branches() ~ branches()))"
+log = "trunk()..@ | ancestors((trunk() | trunk()..bookmarks())::, 4) ~ (trunk()..(remote_bookmarks() ~ bookmarks()))"
 
 [snapshot]
 max-new-file-size = "2M"

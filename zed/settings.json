@@ -7,6 +7,16 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+    "inline_completions": {
+        "disabled_globs": [".env", ".zed/settings.json"]
+    },
+    "assistant": {
+        "default_model": {
+            "provider": "copilot_chat",
+            "model": "gpt-4o"
+        },
+        "version": "2"
+    },
     "buffer_font_family": "FiraCode Nerd Font",
     "buffer_font_weight": 300,
     "buffer_line_height": {
@@ -18,7 +28,7 @@
             "show_copilot_suggestions": false
         },
         "Rust": {
-            "show_inline_completions": false,
+            "show_inline_completions": true,
             "show_copilot_suggestions": true
         },
         "TypeScript": {
