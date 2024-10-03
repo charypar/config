@@ -3,7 +3,7 @@ name = "Viktor Charypar"
 email = "charypar@gmail.com"
 
 [git]
-push-branch-prefix = "viktor/push-"
+push-bookmark-prefix = "viktor/push-"
 
 [ui]
 default-command = "l"
