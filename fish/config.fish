@@ -4,7 +4,7 @@ if status is-interactive
     set fish_greeting
 
     starship init fish | source
-    jj util completion fish | source
+    COMPLETE=fish jj | source
 
     # nvm
     if test -x /opt/homebrew/opt/nvm/nvm.sh
