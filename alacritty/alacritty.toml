@@ -1,0 +1,30 @@
+
+[font]
+size = 12
+
+[font.bold]
+family = "FiraCode Nerd Font"
+style = "Medium"
+
+[font.italic]
+family = "FiraCode Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "FiraCode Nerd Font"
+style = "Light"
+
+[terminal.shell]
+program = "/bin/zsh"
+args = ["-l", "-c", "tmux attach || tmux new -s main"]
+
+[window]
+decorations = "buttonless"
+dynamic_padding = true
+
+[window.padding]
+x = 8
+y = 8
+
+[general]
+import = ["/Users/viktor/.config/alacritty/themes/themes/snazzy.toml"]
